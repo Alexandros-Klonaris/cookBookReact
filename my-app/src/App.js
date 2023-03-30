@@ -19,6 +19,7 @@ import RowJumbotron from './components/RowJumbotron';
 const router = createBrowserRouter( createRoutesFromElements (
   /* Wrap this Root Route to create Router here */
   <Route path="/" element={ <Root/> }>
+    
    <Route path='green-smoothie' element={ <PageOne/> } />
    <Route path='strawberry-smoothie' element={ <PageTwo/> } />
    <Route path='banana-smoothie' element={ <PageThree/> } />
