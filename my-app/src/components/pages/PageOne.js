@@ -3,6 +3,7 @@ import Nav from '../Nav';
 import Footer from '../Footer';
 
 export default function PageOne() {
+    const styleButton = {margin: '3% 0% 7% 0%', backgroundColor: '#f18c86', borderColor: '#f18c86'}
     return (
         
         <div class="flex-box">    
@@ -22,7 +23,7 @@ export default function PageOne() {
         
         
     
-    <div class="card mb-3 ingredients shadow p-2 mb-5 border-0" style="max-width: 200px;">
+    <div class="card mb-3 ingredients shadow p-2 mb-5 border-0" style={{maxWidth:'200px'}}>
                 <img src="./sources/green.jpeg" width="210px" class="img-fluid rounded-start" alt="..." title="Green Smoothie"/>
 
         <div class="ingredients-text">
@@ -32,7 +33,7 @@ export default function PageOne() {
               <h6>Fresh Cucumber</h6>
               <h6>Greek yogurt</h6>
               <button class="btn btn-primary share-btn" id="shareButton1"
-                      style="margin: 3% 0% 7% 0%; background-color: #f18c86; border-color: #f18c86;">Share
+                      style={styleButton}>Share
                       <i class="fa-solid fa-share-nodes"></i>
                 </button>
           

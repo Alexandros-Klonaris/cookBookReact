@@ -7,8 +7,12 @@ import { Outlet } from "react-router-dom";
 export default function Root() {
     return (
         <>
-                <HomePage/>
+            <Nav/>
+            <main>
                 <Outlet/>
+            </main>
+            <Footer/>
+                
         </>
     )
 }

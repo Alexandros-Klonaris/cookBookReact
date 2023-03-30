@@ -19,7 +19,7 @@ export default function PageTwo() {
         </ol> 
     </div>
     
-        <div class="card mb-3 ingredients shadow p-2 mb-5 border-0" style="max-width: 200px;">
+        <div class="card mb-3 ingredients shadow p-2 mb-5 border-0" style={{maxWidth: '200px'}}>
                 <img src="./sources/strawberry.jpeg" class="img-fluid rounded-start" alt="..." title="Strawberry Smoothie"/>
 
         <div class="ingredients-text">
@@ -29,7 +29,7 @@ export default function PageTwo() {
             <h6>Fresh banana</h6>
             <h6>Greek yogurt</h6>
             <button class="btn btn-primary share-btn" id="shareButton1"
-                style="margin: 3% 0% 7% 0%; background-color: #f18c86; border-color: #f18c86;">Share<i class="fa-solid fa-share-nodes"></i>
+                style={{margin: '3% 0% 7% 0%', backgroundColor: '#f18c86', borderColor: '#f18c86'}}>Share<i class="fa-solid fa-share-nodes"></i>
             </button>
           
         </div>

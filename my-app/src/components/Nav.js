@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet, Navigate } from "react-router-dom";
+import { Link, Outlet, Navigate, NavLink } from "react-router-dom";
 
 
 export default function Nav() {
@@ -17,25 +17,25 @@ export default function Nav() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav">
               <li className="nav-item active">
-                <Link className="nav-link dropdown-toggle" to="#" data-bs-toggle="dropdown" aria-expanded="false"><span
-                    className="sr-only">(current)</span>Smoothies</Link>
+                <NavLink className="nav-link dropdown-toggle" to="#" data-bs-toggle="dropdown" aria-expanded="false"><span
+                    className="sr-only">(current)</span>Smoothies</NavLink>
                 <ul className="dropdown-menu">
-                  <li><Link className="dropdown-item" to="./receipe_1.html">Green Smoothie</Link></li>
+                  <li><Link className="dropdown-item" to="/green-smoothie">Green Smoothie</Link></li>
                   <li>
                     <hr className="dropdown-divider"/>
                   </li>
-                  <li><Link className="dropdown-item" to="./receipe_2.html">Strawberry Smoothie</Link></li>
+                  <li><Link className="dropdown-item" to="/strawberry-smoothie">Strawberry Smoothie</Link></li>
                   <li>
                     <hr className="dropdown-divider"/>
                   </li>
-                  <li><Link className="dropdown-item" to="./receipe_3.html">Banana Smoothie</Link></li>
+                  <li><Link className="dropdown-item" to="/banana-smoothie">Banana Smoothie</Link></li>
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">Health</Link>
+                <NavLink className="nav-link" to="health">Health</NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#" id="aboutUs">About us</Link>
+                <NavLink className="nav-link" to="about-us" id="aboutUs">About us</NavLink>
               </li>
             </ul>
           </div>
