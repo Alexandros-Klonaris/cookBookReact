@@ -1,6 +1,38 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import useContentful from "./useContentful";
 
 export default function HomePage() {
+
+  const [photos, setPhotos] = useState([]);
+    const { getPhotos } = useContentful();
+  
+    const blueberry = photos.map((photo) => {
+      return photo.avatar[2].fields.file.url
+    })
+
+    const strawberrie = photos.map((photo) => {
+      return photo.avatar[8].fields.file.url
+    })
+
+    const img1 = photos.map((photo) => {
+      return photo.avatar[5].fields.file.url
+    })
+
+    const img2 = photos.map((photo) => {
+      return photo.avatar[6].fields.file.url
+    })
+
+    const img3 = photos.map((photo) => {
+      return photo.avatar[7].fields.file.url
+    })
+  
+    console.log(photos)
+    console.log(blueberry)
+
+    useEffect(() => {
+        getPhotos().then((response) => response && setPhotos(response));
+      }, []);
   return (
     <>
       <div className="row">
@@ -28,7 +60,7 @@ export default function HomePage() {
               <div className="row g-0 item-card-main">
                 <div className="col-md-4">
                   <img
-                    src="./sources/blueberry.png"
+                    src={blueberry}
                     class="img-fluid rounded-start"
                     alt="..."
                     title="Blueberry Smoothie"
@@ -76,7 +108,7 @@ export default function HomePage() {
               <div class="row g-0 item-card-main">
                 <div class="col-md-4">
                   <img
-                    src="./sources/berry.png"
+                    src={strawberrie}
                     class="img-fluid rounded-start"
                     alt="..."
                     title="Strawberry Smoothie"
