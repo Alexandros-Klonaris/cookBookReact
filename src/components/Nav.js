@@ -22,7 +22,7 @@ export default function Nav() {
     return (
         <nav className="navbar-light navbar navbar-expand-sm">
           <Link className="navbar-brand" to="/">
-            <img src={logo} alt="Smoothie Logo" style= {{ height: "10"}}/>
+            <img src={logo} alt="Smoothie Logo" style= {{ height: "40px"}}/>
           </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

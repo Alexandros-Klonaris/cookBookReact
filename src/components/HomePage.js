@@ -79,7 +79,7 @@ export default function HomePage() {
                       <small class="text-muted">Last updated 3 mins ago</small>
                     </p>
                     <a
-                      href="./receipe_2.html"
+                      href={img2}
                       class="btn btn-primary border-0"
                       style={{ backgroundColor: "#f18c86", maxWidth: "10em" }}
                     >
@@ -127,7 +127,7 @@ export default function HomePage() {
                       <small class="text-muted">Last updated 3 mins ago</small>
                     </p>
                     <a
-                      href="./receipe_2.html"
+                      href={img2}
                       class="btn btn-primary border-0"
                       style={{ backgroundColor: "#f18c86", maxWidth: "10em" }}
                     >
