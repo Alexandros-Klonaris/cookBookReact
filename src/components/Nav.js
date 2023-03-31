@@ -1,12 +1,28 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import useContentful from "./useContentful";
 
 
 export default function Nav() {
+  const [photos, setPhotos] = useState([]);
+    const { getPhotos } = useContentful();
+  
+    const logo = photos.map((photo) => {
+      return photo.avatar[3].fields.file.url
+    })
+  
+    console.log(photos)
+    console.log(logo)
+
+    useEffect(() => {
+        getPhotos().then((response) => response && setPhotos(response));
+      }, []);
+      
     return (
         <nav className="navbar-light navbar navbar-expand-sm">
           <Link className="navbar-brand" to="/">
-            <img src="/src/components/photos/brand-logo.jpeg" alt="Smoothie Logo" style= {{ height: "70"}}/>
+            <img src={logo} alt="Smoothie Logo" style= {{ height: "10"}}/>
           </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

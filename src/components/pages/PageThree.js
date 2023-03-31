@@ -1,6 +1,24 @@
 import React from "react";
-
+import { useEffect, useState } from "react";
+import useContentful from "../useContentful";
 export default function PageThree() {
+
+  const [photos, setPhotos] = useState([]);
+  const { getPhotos } = useContentful();
+
+  const banana = photos.map((photo) => {
+    return photo.avatar[0].fields.file.url
+  })
+
+ console.log(photos)
+ console.log(banana)
+
+  useEffect(() => {
+    getPhotos().then((response) => response && setPhotos(response));
+  }, []);
+
+  
+  
   return (
     <>
       <div class="flex-box">
@@ -55,14 +73,16 @@ export default function PageThree() {
           class="card mb-3 ingredients shadow p-2 mb-5 border-0"
           style={{ maxWidth: "200px" }}
         >
+           
           <img
-            src="./sources/Banana-Smoothie-Recipe-4-1200.jpg"
+            src={banana}
             width="210px"
             height="240px"
             class="img-fluid rounded-start"
             alt="..."
             title="Banana Smoothie"
           />
+
 
           <div class="ingredients-text">
             <h2>Ingredients</h2>

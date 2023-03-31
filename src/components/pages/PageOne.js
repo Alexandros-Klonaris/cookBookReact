@@ -1,7 +1,23 @@
 import React from 'react';
+import { useEffect, useState } from "react";
+import useContentful from "../useContentful";
 
 
 export default function PageOne() {
+    const [photos, setPhotos] = useState([]);
+    const { getPhotos } = useContentful();
+  
+    const greenSmoothie = photos.map((photo) => {
+      return photo.avatar[4].fields.file.url
+    })
+  
+    console.log(photos)
+    console.log(greenSmoothie)
+
+    useEffect(() => {
+        getPhotos().then((response) => response && setPhotos(response));
+      }, []);
+
     const styleButton = {margin: '3% 0% 7% 0%', backgroundColor: '#f18c86', borderColor: '#f18c86'}
     return (
     
@@ -22,7 +38,7 @@ export default function PageOne() {
         </div>
     
         <div class="card mb-3 ingredients shadow p-2 mb-5 border-0" style={{maxWidth:'200px'}}>
-                <img src="./sources/green.jpeg" width="210px" class="img-fluid rounded-start" alt="..." title="Green Smoothie"/>
+                <img src={greenSmoothie} width="210px" class="img-fluid rounded-start" alt="..." title="Green Smoothie"/>
 
             <div class="ingredients-text">
                 <h2>Ingredients</h2>

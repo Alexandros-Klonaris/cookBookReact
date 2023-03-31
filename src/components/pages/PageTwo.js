@@ -1,6 +1,24 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import useContentful from "../useContentful";
 
 export default function PageTwo() {
+
+  const [photos, setPhotos] = useState([]);
+  const { getPhotos } = useContentful();
+
+  const strawberries = photos.map((photo) => {
+    return photo.avatar[8].fields.file.url
+  })
+
+
+  console.log(photos)
+  console.log(strawberries)
+ 
+   useEffect(() => {
+     getPhotos().then((response) => response && setPhotos(response));
+   }, []);
+
   return (
     <>
       <div class="flex-box">
@@ -56,7 +74,7 @@ export default function PageTwo() {
           style={{ maxWidth: "200px" }}
         >
           <img
-            src="./sources/strawberry.jpeg"
+            src={strawberries}
             class="img-fluid rounded-start"
             alt="..."
             title="Strawberry Smoothie"
